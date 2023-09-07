@@ -50,7 +50,7 @@ ol {
 .content {
   display: flex;
   gap: 30px;
-  margin: 133px 0;
+  margin: 133px 30px;
   max-height: 534px;
 }
 
@@ -87,7 +87,7 @@ fieldset {
   margin-top: 16px;
   gap: 40px;
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -119,8 +119,8 @@ fieldset {
   border: none;
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
-  color: rgba(255, 255, 255, 0.70);
-  font-family: Fira Sans Condensed;
+  color: rgba(255, 255, 255);
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -153,7 +153,7 @@ fieldset {
   background-color: inherit;
   color: #FFF;
   text-align: center;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -162,7 +162,7 @@ fieldset {
 }
 
 .search-form__textfield:active {
-  outline: 1px solid #FFF;
+  border: 1px solid #FFF;
 }
 
 .button:active {
@@ -179,7 +179,7 @@ fieldset {
 
 .title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -194,14 +194,18 @@ fieldset {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   width: 399px;
+  height: 534px;
   position: relative;
   inset: 0;
   z-index: 0;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .content__list::-webkit-scrollbar {
@@ -225,7 +229,7 @@ fieldset {
 
 .content__video-card-title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -235,7 +239,7 @@ fieldset {
 
 .content__video-card-description {
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -261,8 +265,6 @@ fieldset {
 
 .search-form__label:hover {
   cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 .button:hover {
@@ -282,7 +284,7 @@ input[type="checkbox"]:checked + span {
   background-color: transparent;
   color: #FFF;
   text-align: center;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -300,7 +302,13 @@ input[type="checkbox"]:checked + span {
   outline: 1px solid #FFF;
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
+  padding: 1px;
+  border: none;
   outline-offset: 1px;
+}
+
+.search-form__label:focus {
+  outline: none;
 }
 
 .button:focus-visible {
@@ -308,8 +316,14 @@ input[type="checkbox"]:checked + span {
   outline: 1px solid #FFF;
 }
 
-.content__video-card:focus-visible {
-  border: 1px solid #FFF;
+.button:focus {
+  outline: none;
 }
 
-/*извините, что до этого отправила сырую работу. проблемы с ноутбуком, и я не сразу поняла ваши комментарии. в общем, надеюсь сейчас все ок.*/
+.content__video-card:focus-visible {
+  outline: 1px solid #FFF;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
